@@ -22,15 +22,49 @@ using namespace std;
 //	system("pause");
 //	return 0;
 //}
+class Test {
+private:
+	int i;
+public:
+
+	Test(int i) :i(i) {}
+	void add() {
+		i++;
+	}
+	void print() {
+		cout << i << endl;
+	}
+};
 int main() {
 	//char a[] = "Hello,world";
 	//char b[] = "Hello,world";
-	static int a[5];
-	for (int x : a) {
-		cout << x << "\t";
-	}
-	cout << endl;
+	/*int b[3][4] = { {1,2,3,4},
+	{5,6,7,8},
+	{9,10,11,12}
+	};*/
+	//int *a = &b[0][0];
+	//for (int i = 0; i < 12; i++) {
+		//cout << b[0][i] << "\t";
+
+	//}
+	//cout << b[0] << endl;
+	//cout << b[1] << endl;
+	//cout << &b[0] << endl;
+	//cout << &b[1] << endl;
+	//int *a = b[0];
 	//cout << b-1 << endl;
+	Test a(1);
+	a.print();
+	Test *b = &a;
+	b->add();
+	Test c(a);
+	a.print();
+	a.add();
+	a.print();
+	c.print();
+	cout << &a << endl;
+	cout << b << endl;
+	cout << &c << endl;
 	system("pause");
 	return 0;
 }
