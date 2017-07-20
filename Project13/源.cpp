@@ -22,19 +22,23 @@ using namespace std;
 //	system("pause");
 //	return 0;
 //}
-class Test {
-private:
-	int i;
-public:
-
-	Test(int i) :i(i) {}
-	void add() {
-		i++;
-	}
-	void print() {
-		cout << i << endl;
-	}
-};
+//class Test {
+//private:
+//	int i;
+//public:
+//
+//	Test(int i) :i(i) {}
+//	void add() {
+//		i++;
+//	}
+//	void print() {
+//		cout << i << endl;
+//	}
+//};
+int *func() {
+	int a[2] = { 1,2 };
+	return a;
+}
 int main() {
 	//char a[] = "Hello,world";
 	//char b[] = "Hello,world";
@@ -53,7 +57,7 @@ int main() {
 	//cout << &b[1] << endl;
 	//int *a = b[0];
 	//cout << b-1 << endl;
-	Test a(1);
+	/*Test a(1);
 	a.print();
 	Test *b = &a;
 	b->add();
@@ -64,7 +68,9 @@ int main() {
 	c.print();
 	cout << &a << endl;
 	cout << b << endl;
-	cout << &c << endl;
+	cout << &c << endl;*/
+	int *a = func();
+	cout << a[1] << endl;
 	system("pause");
 	return 0;
 }
