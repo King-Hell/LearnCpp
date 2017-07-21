@@ -59,6 +59,10 @@ public:
 		pos[1] = arr[index].getY();
 		return pos;
 	}
+	void operator+=(double a[2]) {
+		addV(a[0], a[1]);
+	}
+
 	bool addV(double x, double y) {
 		if (size == maxSize) {
 			Vertex *temp = new Vertex[maxSize * 2];
@@ -100,7 +104,9 @@ int main() {
 	cout << "周长为" << tri.getCirc() << endl;
 	cout << "------------------------------" << endl;
 	Polygon pent = rect;
-	pent.addV(-1, 0);
+	//pent.addV(-1, 0);
+	double a[] = { -1,0 };
+	pent += a;
 	pent.print();
 	cout << "面积为" << pent.getArea() << endl;
 	cout << "周长为" << pent.getCirc() << endl;
