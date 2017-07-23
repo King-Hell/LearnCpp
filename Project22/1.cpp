@@ -62,7 +62,7 @@ public:
 		if (isFull()) {
 			T *temp = new T[arrSize * 2];
 			for (int i = 0; i < _size; i++) {
-				temp[i] = ;
+				temp[i] = data;
 			}
 			delete[]_arr;
 			_arr = temp;

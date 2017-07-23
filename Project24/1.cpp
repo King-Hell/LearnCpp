@@ -141,6 +141,7 @@ public:
 
 
 int main() {
+	Array<char> a(10);
 	system("pause");
 	return 0;
 }

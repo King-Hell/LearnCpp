@@ -22,7 +22,7 @@ int main() {
 
 	num2 = num;
 	for (int i = digit; i>0; i--) {
-		num2 /= pow(10, i - 1);
+		num2 /=(int) pow(10, i - 1);
 		num2 = num2 % 10;
 		cout << "µÚ" << digit - i + 1 << "Î»ÊÇ" << num2 << endl;
 		num2 = num;

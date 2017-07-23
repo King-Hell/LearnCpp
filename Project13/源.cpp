@@ -35,10 +35,19 @@ using namespace std;
 //		cout << i << endl;
 //	}
 //};
-int *func() {
-	int a[2] = { 1,2 };
-	return a;
-}
+//int *func() {
+//	int a[2] = { 1,2 };
+//	return a;
+//}
+class Test {
+	int *arr;
+	Test(int i) {
+		
+	}
+	~Test() {
+		
+	}
+};
 int main() {
 	//char a[] = "Hello,world";
 	//char b[] = "Hello,world";

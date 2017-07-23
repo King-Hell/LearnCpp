@@ -6,7 +6,7 @@ int main() {
 	int a[10];
 	int min=0,temp=0;
 	int size = sizeof(a) / sizeof(a[0]);
-	srand(time(NULL));
+	srand((unsigned)time(NULL));
 	for (int i = 0; i < size; i++) {
 		a[i] = rand();
 	}

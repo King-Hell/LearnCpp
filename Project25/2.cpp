@@ -3,28 +3,49 @@ using namespace std;
 class String {
 private:
 	char *arr;
+	int maxSize;
+	int size;
 public:
 	String() {
-		arr = new char[100];
+		creat();
 	}
 	String(const String &str) {
-		arr = new char[100];
+		creat();
+		copy(str);
+	}
+	String(char str[]) {
+		creat();
 		int i = 0;
-		for (; str.arr[i] != 0; i++) {
-			arr[i] = str.arr[i];
+		for (; str[i] != 0; i++) {
+			arr[i] = str[i];
 		}
 		arr[i] = 0;
+		size += i + 1;
 	}
-	String(char *arr) :arr(arr) {}
+	void creat() {
+		arr = new char[100];
+		maxSize = 100;
+		size = 0;
+	}
+	operator char*() {
+		return arr;
+	}
 	friend ostream &operator<<(ostream &os, const String &str);
 	friend istream &operator>>(istream &is, const String &str);
 	bool operator==(const String &str) {
-		for (int i = 0; arr[i] != 0 && str.arr[i] != 0; i++) {
-			if (arr[i] != str.arr[i]) {
+		for (int i = 0; arr[i] != 0 && str[i] != 0; i++) {
+			if (arr[i] != str[i]) {
 				return false;
+
 			}
 		}
 		return true;
+	}
+	char operator[](int i) {
+		return arr[i];
+	}
+	char operator[](int i)const {
+		return arr[i];
 	}
 	void operator+=(const char str[]) {
 		char *p = arr;
@@ -36,14 +57,18 @@ public:
 			*p = str[i];
 		}
 		*p = 0;
+		size += i;
 	}
-	String &operator=(String &str) {
-		if (arr != NULL) {
-			int i = 0;
-			for (; str.arr[i] != 0; i++) {
-				arr[i] = str.arr[i];
-			}
-			arr[i] = 0;
+	void copy(const String &str) {
+		int i = 0;
+		for (; str[i] != 0; i++) {
+			arr[i] = str[i];
+		}
+		arr[i] = 0;
+	}
+	String &operator=(const String &str) {
+		if (this != NULL) {
+			copy(str);
 			return *this;
 		}
 		else {
@@ -52,8 +77,9 @@ public:
 		}
 	}
 	~String() {
-
+		delete[]arr;
 	}
+
 };
 ostream &operator<<(ostream &os, const String &str) {
 	os << str.arr;
@@ -63,13 +89,13 @@ istream &operator>>(istream &is, const String &str) {
 	is >> str.arr;
 	return is;
 }
+
 int main() {
+
 	String str1("hello");
 	cout << str1 << endl;
-
 	String str2;
 	cin >> str2;
-
 	cout << (str1 == str2 ? "Equval" : "Unequval") << endl;
 
 	String t(str1);

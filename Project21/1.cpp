@@ -1,5 +1,5 @@
 #include<iostream>
-z'z'z'z'z'z'z'z'z'z'z'z'z'z'z'z'z'z'z
+using namespace std;
 #include<math.h>
 #define PI 3.1415926535;
 using namespace std;
