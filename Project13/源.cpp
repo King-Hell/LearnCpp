@@ -39,15 +39,15 @@ using namespace std;
 //	int a[2] = { 1,2 };
 //	return a;
 //}
-class Test {
-	int *arr;
-	Test(int i) {
-		
-	}
-	~Test() {
-		
-	}
-};
+//class Test {
+//	int *arr;
+//	Test(int i) {
+//		
+//	}
+//	~Test() {
+//		
+//	}
+//};
 int main() {
 	//char a[] = "Hello,world";
 	//char b[] = "Hello,world";
@@ -78,8 +78,13 @@ int main() {
 	cout << &a << endl;
 	cout << b << endl;
 	cout << &c << endl;*/
-	int *a = func();
-	cout << a[1] << endl;
+	char a[100];
+	cin >> a;
+	cout << a << endl;
+	cin.getline(a,3);
+	cout << a << endl;
+	cin.get(a, 3);
+	cout << a << endl;
 	system("pause");
 	return 0;
 }
