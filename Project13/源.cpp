@@ -1,4 +1,5 @@
 #include<iostream>
+#include<string.h>
 using namespace std;
 //void func(char a[]) {
 //	cout << sizeof(a) / sizeof(a[0]) << endl;
@@ -78,13 +79,14 @@ int main() {
 	cout << &a << endl;
 	cout << b << endl;
 	cout << &c << endl;*/
-	char a[100];
-	cin >> a;
-	cout << a << endl;
-	cin.getline(a,3);
-	cout << a << endl;
-	cin.get(a, 3);
-	cout << a << endl;
+
+	char b[] = "1/3";
+	char *m=new char[10];
+	m = strtok_s(b, "/");
+	char *d = new char[10];
+	d = strtok(NULL,"/");
+	cout << m << endl;
+	cout << d << endl;
 	system("pause");
 	return 0;
 }
